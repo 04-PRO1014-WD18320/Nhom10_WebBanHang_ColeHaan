@@ -1,3 +1,4 @@
+
 <style>
 .row{
     height: 20px;
@@ -21,10 +22,10 @@
             Danh muc <br>
             <select name="id_danhmuc">
                 <?php
-                  //  foreach ($listdanhmuc as $danhmuc) {
-                    //    extract($danhmuc);
-                    //    echo '<option value='".$id_danhmuc."'>'.$ten_danhmuc.'</option>';
-                   // }
+                   foreach ($listdanhmuc as $danhmuc) {
+                       extract($danhmuc);
+                       echo '<option value="'.$id_danhmuc.'">'.$ten_danhmuc.'</option>';
+                   }
                 ?>
                 
             </select>

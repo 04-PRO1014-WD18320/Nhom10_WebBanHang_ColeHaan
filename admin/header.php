@@ -50,7 +50,7 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="index.php?act=dsdm">Danh sách danh mục</a>
+                                    <a class="nav-link" href="index.php?act=listdm">Danh sách danh mục</a>
                                     <a class="nav-link" href="index.php?act=adddm">Thêm danh mục</a>
                                     <a class="nav-link" href="index.php?act=updatedm">Chỉnh sửa</a>
                                 </nav>
