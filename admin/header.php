@@ -68,7 +68,7 @@
                                     </a>
                                     <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="index.php?act=dssp">Danh sách sản phẩm</a>
+                                            <a class="nav-link" href="index.php?act=listsp">Danh sách sản phẩm</a>
                                             <a class="nav-link" href="index.php?act=addsp">Thêm sản phẩm</a>
                                             <a class="nav-link" href="index.php?act=updatesp">Sửa sản phẩm</a>
                                         </nav>
