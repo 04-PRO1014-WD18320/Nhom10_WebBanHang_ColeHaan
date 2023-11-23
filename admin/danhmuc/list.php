@@ -37,11 +37,17 @@ th, td{
         <?php
             foreach ($listdanhmuc as $danhmuc) {
                 extract($danhmuc);
+
+                $suadm="index.php?act=suadm&id_danhmuc=".$id_danhmuc;
+                $xoadm="index.php?act=xoadm&id_danhmuc=".$id_danhmuc;
                 echo '<tr>
                         <td><input type="checkbox" name=""></td>
                         <td>'.$id_danhmuc.'</td>
                         <td>'.$ten_danhmuc.'</td>
-                        <td><input type="button" value = "Sửa" name=""><input type="button" value = "Xóa" name=""></td>
+                        <td>
+                        <a href="' . $suadm . '"><input type="button" value="Sửa"> </a>
+                        <a href="' . $xoadm . '"><input type="button" value="Xóa"></a>
+                        </td>
                       </tr>';
             }
         ?>

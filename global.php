@@ -1,0 +1,3 @@
+<?php
+$imagepath = "upload/"
+?>
