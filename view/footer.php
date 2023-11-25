@@ -1,7 +1,7 @@
 <div id="footer">
             <div class="box">
                 <div class="logo">
-                    <img src="../upload/logo.png" alt="">
+                    <img src="view/image/logo.png" alt="">
                 </div>
                 <p>Cung cấp sản phẩm với chất lượng an toàn cho quý khách</p>
             </div>
@@ -24,7 +24,7 @@
             </div>
             <div class="box">
                 <h3>LIÊN HỆ</h3>
-                <form action="">
+                <form action="" class="box-e">
                     <input type="text" placeholder="Địa chỉ email">
                     <button>Nhận tin</button>
                 </form>

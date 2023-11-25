@@ -8,15 +8,15 @@ function loadall_user(){
 }
 
 
-function insert_user( $hoten,$email, $pass)
+function insert_user( $user, $email, $pass)
 {
-    $sql = "INSERT INTO user (hoten, email, pass) VALUES ( '$hoten','$email', '$pass')";
+    $sql = "INSERT INTO user (user, email, pass) VALUES ('$user','$email', '$pass')";
     pdo_execute($sql);
 }
 
-function checkuser($email, $pass)
+function checkuser($user, $pass)
 {
-    $sql = "SELECT * FROM user WHERE email='".$email."' AND  pass='".$pass."'";
+    $sql = "SELECT * FROM user WHERE user='".$user."' AND  pass='".$pass."'";
     $sp = pdo_query_one($sql);
     return $sp;
 }
@@ -28,12 +28,10 @@ function checkemail($email)
     return $sp;
 }
 
-function update_user($id, $hoten, $pass, $email)
+function update_user($id_user, $user, $pass, $email, $diachi, $sdt)
 {
+    $sql = "UPDATE user SET user='" . $user . "', pass='" . $pass . "', email='" . $email . "', diachi='" . $diachi . "', sdt='" . $sdt . "' WHERE id_user=" . $id_user;
     
-        $sql = "UPDATE user SET user='" . $user . "', pass='" . $pass . "', email='" . $email . "' WHERE id=" . $id;
-    
-
     pdo_execute($sql);
 }
 

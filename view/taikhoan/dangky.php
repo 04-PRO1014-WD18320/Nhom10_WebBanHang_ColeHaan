@@ -24,24 +24,21 @@
 
 <body class="bg-gradient-primary">
 
-    <div class="container">
+    <div class="container" style="margin-top:100px;margin-left:420px;">
 
         <div class="card o-hidden border-0 shadow-lg my-5">
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
                 <div class="row" ;>
-                <div style= "width:40% ; ">
-                                <img src="../../upload/login2.png"  >
-                            </div>
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Đăng Ký Tài Khoản!</h1>
                             </div>
-                            <form class="user">
+                            <form class="user" action="index.php?act=dangky" method="post">
                                 <div class="form-group row">
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" name="hoten"
+                                        <input type="text" class="form-control form-control-user" name="user"
                                             placeholder="Name">
                                     </div>
                                 </div>
@@ -57,26 +54,21 @@
 
                                 </div>
                                 <input class="btn btn-primary btn-user btn-block"   type="submit" value="Đăng ký" name="dangky">
-                                <?php
-                                if (isset($thongbao) && ($thongbao != "")) {
-                                echo $thongbao;
-                               }
-                                 ?>
 
                                 <hr>
-                                <a href="index.php" class="btn btn-google btn-user btn-block">
-                                    <i class="fab fa-google fa-fw"></i> Register with Google
-                                </a>
-                                <a href="index.php" class="btn btn-facebook btn-user btn-block">
-                                    <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
-                                </a>
                             </form>
+                            <?php
+                                if (isset($thongbao)&&($thongbao!="")) {
+                                    echo $thongbao;
+                                }     
+
+                            ?>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="forgot-password.php">Quên mật khẩu?</a>
+                                <a class="small" href="">Quên mật khẩu?</a>
                             </div>
                             <div class="text-center">
-                                <a class="small" href="login.php">Bạn đã có tài khoản? Đăng nhập!</a>
+                                <a class="small" href="index.php?act=dangnhap">Bạn đã có tài khoản? Đăng nhập!</a>
                             </div>
                         </div>
                     </div>

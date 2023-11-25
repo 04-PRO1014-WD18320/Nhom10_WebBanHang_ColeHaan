@@ -11,7 +11,7 @@
 #wrapper {
     /* Kích thước màn hình là 1280 x 720 */
     width: 100%;
-    height: 100vh;
+    height: 200vh;
 }
 #header {
     width: 100%;
@@ -46,6 +46,11 @@
 #actions .item {
     margin-left:22px;
 }
+#actions .item a{
+    background-color: #fff;
+    color: black;
+}
+
 
 
 .banner  {
@@ -54,9 +59,38 @@
     margin-top:40px;
     display: flex;
     padding-left:80px;
-    position:relative;
+    position: relative;
     object-fit: cover;
 
+}
+.banner2 img{
+    width: 93%;
+    margin-top:40px;
+    padding-left: 100px;
+    margin-bottom: 50px;
+}
+.left-column {
+    margin-top: 50px;
+    width: 50%;
+    height: 500px;
+    
+    float: left;
+}
+.left-column img{
+    margin-left: 100px;
+    max-width: 70% ;
+    object-fit: cover;
+}
+.right-column {
+    margin-top: 50px;
+    width: 50%;
+    height: 500px;
+    float: right;
+}
+.right-column img{
+    margin-left: 120px;
+    max-width: 70% ;
+    object-fit: cover;
 }
 .logo{
     margin-left: 40px;
@@ -314,9 +348,9 @@ ul li{
 
 #footer {
     width: 100%;
-    background:rgb(0,0,0,0.79);
+    background:rgba(0, 0, 0, 0.79);
     height: 322px;
-    margin-top:338px;
+    margin-top:100px;
     padding:0px 63px;
     padding-top:57px;
     display: flex;
@@ -325,6 +359,16 @@ ul li{
 
 #footer .box {
     width: 250px;
+    color:#fff;
+}
+#footer .box .logo img{
+    width: 90%;
+    margin-top: 30px;
+}
+#footer .box p{
+    margin-left: 25px;
+    margin-top: 20px;
+    font-size: 15px;
     color:#fff;
 }
 
@@ -355,10 +399,45 @@ ul li{
 }
 
 #footer .box form button {
-    background:#362f2f;
+    background:#544040;
     box-shadow: 5px 5px 4px rgba(0,0,0.25);
     width: 163px;
     height: 38px;
     margin-top:29px;
     color:#fff;
+}
+.box .box-e{
+    color: #fff;
+}
+.ctsp{
+    margin-top: 50px;
+    width: 100%;
+    height: 700px;
+    border: #362f2f solid 1px;
+    border-radius: 20px;
+}
+.ctsp img{
+    margin-top: 20px;
+    margin-left: 100px;
+    width: 30%;
+}
+.giaspct{
+    font-size: 10px;
+    color: black;
+    float: right;
+    margin-right: 500px;
+    margin-top: 50px;
+}
+.tieudesp{
+    float: right;
+}
+.tieudesp .motaspct{
+    border-radius: 10px;
+    width: 450px;
+    height: 200px;
+    word-break: keep-all;
+    border: rgb(0, 0, 0) solid 1px;
+    float: right;
+    margin-right: 500px;
+    margin-top: 100px;
 }

@@ -60,7 +60,7 @@ function loadone_sanpham($id_sanpham)
 
 function load_sanpham_cungloai($id_sanpham, $id_danhmuc)
 {
-    $sql = "SELECT * FROM sanpham WHERE id_danhmuc='.$id_danhmuc.' AND id_danhmuc <> " . $id_danhmuc;
+    $sql = "SELECT * FROM sanpham WHERE id_danhmuc='.$id_danhmuc.' AND id_sanpham <> " . $id_sanpham;
     $listsanpham = pdo_query($sql);
     return $listsanpham; // trả về danh sách danh mục
 }
