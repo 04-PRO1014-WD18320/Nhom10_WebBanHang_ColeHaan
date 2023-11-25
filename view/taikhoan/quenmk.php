@@ -35,9 +35,7 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                        <div style= "width:50% ; ">
-                                <img src="../../upload/login2.png"  >
-                            </div>
+
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center" style = "margin-bottom:150px;">
@@ -56,10 +54,10 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="register.php">Đăng kí tài khoản!</a>
+                                        <a class="small" href="">Đăng kí tài khoản!</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="login.php">Bạn đã có tài khoản? Đăng nhập!!</a>
+                                        <a class="small" href="">Bạn đã có tài khoản? Đăng nhập!!</a>
                                     </div>
                                 </div>
                             </div>

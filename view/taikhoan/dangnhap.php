@@ -20,12 +20,15 @@
     <!-- Custom styles for this template-->
     
     <link href="../../css/login/css/sb-admin-2.min.css" rel="stylesheet">
+    
 
 </head>
+<style>
 
+</style>
 <body class="bg-gradient-primary">
 
-    <div class="container">
+    <div class="container" style="margin-top:100px;margin-left:450px;">
 
         <!-- Outer Row -->
         <div class="row justify-content-center">
@@ -36,23 +39,56 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div style= "width:50% ; ">
-                                <img src="../../upload/login3.png"  >
-                            </div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
-                                    <form class="user">
+                                    <?php
+                                        if (isset($_SESSION['taikhoan'])) {    
+                                            extract($_SESSION['taikhoan']);
+                                        ?>
+                                        <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Thông tin tài khoản</h1>
+                                    </div>
+                                        <h4>Tên</h4><br>
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                            <?=$user?>
+                                        </div>
+                                        <div style="margin-top:50px;">
+                                        <div class="form-group">
+                                        <div class="text-center">
+                                        <a class="small" href="index.php?act=edit_taikhoan">Sửa thông tin</a>
+                                        </div>
+                                        <div class="text-center">
+                                        <a class="small" href="index.php?act=quenmk">Quên mật khẩu</a>
+                                        </div>
+                                        <?php
+                                            if($role==1){
+                                        ?>
+                                        <div class="text-center">
+                                        <a class="small" href="admin/index.php">Truy cập admin</a>
+                                        </div>
+                                        <?php }?>
+                                        <div class="text-center">
+                                        <a class="small" href="index.php?act=thoat">Đăng xuất!</a>
+                                        </div>
+                                        </div>
+                                        </div>
+
+                                    <?php    
+                                        }else{
+
+                                    ?>  
+                                    <form class="user" action="index.php?act=dangnhap" method="post">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-user"
+                                                
+                                                placeholder="User" name="user">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
+                                                id="exampleInputPassword" placeholder="Password" name="pass">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -61,24 +97,18 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <a href="index.php" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a>
+                                        <input class="btn btn-primary btn-user btn-block"   type="submit" value="Đăng nhập" name="dangnhap">
                                         <hr>
-                                        <a href="index.php" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login with Google
-                                        </a>
-                                        <a href="index.php" class="btn btn-facebook btn-user btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                        </a>
+
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.php">Quên mật khẩu?</a>
+                                        <a class="small" href="">Quên mật khẩu?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="register.php">Đăng kí tài khoản!</a>
+                                        <a class="small" href="index.php?act=dangky">Đăng kí tài khoản!</a>
                                     </div>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>
