@@ -121,6 +121,24 @@ if ((isset($_GET['act']))&&($_GET['act']!="")) {
             include "view/giohang/bill.php";
             break;
         case 'billcomf':
+            if (isset($_POST['dongydathang']) && ($_POST['dongydathang'])){
+                $user=$_POST['user'];
+                $email=$_POST['email'];
+                $diachi=$_POST['diachi'];
+                $sdt=$_POST['sdt'];
+                $pttt=$_POST['pttt'];
+                $ngaydathang=date('h:i:sa d/m/Y');
+                $tongdonhang=tongdonhang();
+                $idbill= insert_bill($user,$email,$diachi,$sdt,$pttt,$ngaydathang,$tongdonhang);
+
+                foreach ($_SESSION['mycart'] as $cart) {
+                    insert_cart($_SESSION['mycart'],$cart[0],$cart[2],$cart[1],$cart[3],$cart[4],$cart[5],$idbill);
+                }
+                $_SESSION['cart']=[];
+
+            }
+            $bill=loadone_bill($idbill);
+            $billct=loadall_cart($idbill);
             include "view/giohang/billcomf.php";
             break;
             default:

@@ -1,6 +1,6 @@
-<form action="index.php?act=billcomf" method="post" >
+<form action="index.php?act=billcomf" method="post" style="" >
     
-    <div style="text-align: center;">
+    <br><div style="margin-left:200px;">
     <h2>Thông tin đặt hàng</h2>
        <br><br> <table class="bill" border="1" style="width:700px; height:250px; border:1px solid black; text-align:center;">
             <?php
@@ -34,20 +34,38 @@
             </tr>
         </table>
     </div><br>
-    <br><h3 style="text-align:center;">Phương thức thanh toán</h3>
-        <div style="width:700px; height:100px; border:1px solid black; text-align:center;display:flex;">
-            <div></div>
+        <div style="margin-left:200px;">
+        <br><h3 style="margin-left:50px; ">Phương thức thanh toán</h3>
+        <div style="width:400px; height:50px; border:1px solid black; text-align:center; border-radius: 10px;">
+            <div>
+                <table>
+                    <tr>
+                        <td style="padding-top:10px; padding-right:20px;padding-left:20px;"><input type="radio" value="1" name="pttt" checked>Trả tiền khi nhận hàng</td>
+                        <td style="padding-top:10px; padding-right:20px;padding-left:20px;"><input type="radio" value="2" name="pttt" >Thanh toán online</td>
+                        
+                    </tr>
+                </table>
+            </div>
         </div>
-        <h3 style="text-align:center;">Đơn hàng</h3>
-        <br><table border="1"; style="width:700px; height:300px; border:1px solid black; text-align:center;">
+        <div>
+            
+        </div>
+        </div>
+    
+        <div style="margin-left:200px;">
+        <br><h3 style="margin-left:50px;">Đơn hàng</h3>
+        <table border="1"; style="width:700px; height:300px; border:1px solid black; text-align:center;">
         <thead>
         </thead>
         <?php
             viewcart(0);
         ?>
         </table>
+        </div>
 
-
+        <br><br><div style="margin-left:200px; font-size:20px; " >
+            <input type="submit" value="Đồng ý đặt hàng" name="dongydathang" style=" background-color: rgb(231, 178, 178);color: #fff; border-radius: 10px;">
+        </div>
 
 
 </form>
