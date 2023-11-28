@@ -53,4 +53,75 @@
                 '.$xoasp_td2.'
             </tr>';
     }
+
+function bill_chi_tiet($listbill){
+        global $imagepath;
+        $tong=0;
+        $i=0;
+        
+        echo '<thead>
+            <tr>
+                <th>Ảnh sản phẩm</th>
+                <th>Tên sản phẩm</th>
+                <th>Đơn giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+            </tr>
+            </thead>';
+        foreach ($listbill as $cart) {
+            $image=$imagepath.$cart['image'];
+            $thanhtien=(double)$cart[3]*(double)$cart[4];
+            $tong+=(double)$cart['thanhtien'];
+            
+            echo    '
+                        <tr>
+                        <td><img src="'.$image.'"  height="80px"></td>
+                        <td>'.$cart['ten_sanpham'].'</td>
+                        <td>$ '.$cart['gia'].'</td>
+                        <td>'.$cart['soluong'].'</td>
+                        <td>'.$cart['thanhtien'].'</td>
+
+                    </tr>';
+                $i+=1;
+        } 
+        echo '<tr>
+                <td colspan="4" style="background-color:pink"> Tổng tiền đơn hàng </td>
+                <td>$ '.$tong.'</td>
+            </tr>';
+}
+
+function tongdonhang(){
+        $tong=0;
+
+        foreach ($_SESSION['mycart'] as $cart) {
+            
+            $tongtien=(double)$cart[3]*(double)$cart[4];
+            $tong+=$tongtien;
+            
+        } 
+        return $tong;
+}
+
+
+function insert_bill($user,$email,$diachi,$sdt,$pttt,$ngaydathang,$tongdonhang){
+    $sql="insert into bill(bill_name,bill_email,bill_diachi,bill_sdt,bill_pttt,ngaydathang,total) values('$user','$email','$diachi','$sdt','$pttt','$ngaydathang','$tongdonhang')";
+    return pdo_execute_return_lastInsertId($sql);
+}    
+function insert_cart($iduser,$idpro,$image,$ten_sanpham,$gia,$soluong,$thanhtien,$idbill){
+    $sql="insert into cart(iduser,idpro,image,ten_sanpham,gia,soluong,thanhtien,idbill) values('$iduser','$idpro','$image','$ten_sanpham','$gia','$soluong','$thanhtien','$idbill')";
+    return pdo_execute($sql);
+} 
+
+function loadone_bill($id)
+{
+    $sql = "SELECT * FROM bill WHERE id=" . $id;
+    $bill = pdo_query_one($sql);
+    return $bill;
+}
+function loadall_cart($idbill)
+{
+    $sql = "SELECT * FROM cart WHERE idbill=" . $idbill;
+    $bill = pdo_query($sql);
+    return $bill;
+}
 ?>

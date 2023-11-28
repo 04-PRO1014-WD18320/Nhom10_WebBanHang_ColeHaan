@@ -37,8 +37,16 @@
         </div>';
     ?>
 </div>
-<div>
-<div class="tieude">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#binhluan").load("view/binhluan/form.php", {idpro: <?=$id_sanpham?>});
+        });
+    </script>
+<div id="binhluan">
+
+</div>
+<br><div class="tieude">
     <h3>Sản phẩm cùng loại</h3>
 </div>
 <div>

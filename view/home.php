@@ -83,7 +83,7 @@
     <div class="name"><a href="'.$linksp.'">'.$ten_sanpham.'</a></div>
     
     <div class="desc"></div>
-    <div class="price">'.$gia.' VND</div>
+    <div class="price">$ '.$gia.'</div>
     </div>';
     $i+=1;
     }
