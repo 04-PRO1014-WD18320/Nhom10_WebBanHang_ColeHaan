@@ -19,7 +19,7 @@
     .formbl{
         
         width: 500px;
-        height:100px; border:1px solid black;
+        height:70px; border:1px solid black;
         border-radius: 5px;
     }
 </style>

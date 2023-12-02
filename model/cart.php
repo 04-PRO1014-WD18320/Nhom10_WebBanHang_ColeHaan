@@ -70,8 +70,8 @@ function bill_chi_tiet($listbill){
             </thead>';
         foreach ($listbill as $cart) {
             $image=$imagepath.$cart['image'];
-            $thanhtien=(double)$cart[3]*(double)$cart[4];
-            $tong+=(double)$cart['thanhtien'];
+            $tongtien=(double)$cart[3]*(double)$cart[4];
+            $tong+=(double)$cart['tongtien'];
             
             echo    '
                         <tr>
@@ -79,7 +79,7 @@ function bill_chi_tiet($listbill){
                         <td>'.$cart['ten_sanpham'].'</td>
                         <td>$ '.$cart['gia'].'</td>
                         <td>'.$cart['soluong'].'</td>
-                        <td>'.$cart['thanhtien'].'</td>
+                        <td>$ '.$cart['tongtien'].'</td>
 
                     </tr>';
                 $i+=1;
@@ -103,12 +103,18 @@ function tongdonhang(){
 }
 
 
-function insert_bill($user,$email,$diachi,$sdt,$pttt,$ngaydathang,$tongdonhang){
-    $sql="insert into bill(bill_name,bill_email,bill_diachi,bill_sdt,bill_pttt,ngaydathang,total) values('$user','$email','$diachi','$sdt','$pttt','$ngaydathang','$tongdonhang')";
+function insert_bill($id_user,$user,$email,$diachi,$sdt,$pttt,$ngaydathang,$tongdonhang){
+    $id_user_string = implode(', ', $id_user[0]);
+    $sql="insert into bill(id_user,bill_name,bill_email,bill_diachi,bill_sdt,bill_pttt,ngaydathang,total) 
+    values('$id_user_string','$user','$email','$diachi','$sdt','$pttt','$ngaydathang','$tongdonhang')";
     return pdo_execute_return_lastInsertId($sql);
 }    
-function insert_cart($iduser,$idpro,$image,$ten_sanpham,$gia,$soluong,$thanhtien,$idbill){
-    $sql="insert into cart(iduser,idpro,image,ten_sanpham,gia,soluong,thanhtien,idbill) values('$iduser','$idpro','$image','$ten_sanpham','$gia','$soluong','$thanhtien','$idbill')";
+
+function insert_cart($id_user,$idpro,$image,$ten_sanpham,$gia,$soluong,$tongtien,$idbill){
+   
+    $id_user_string = implode(', ', $id_user[0]);
+    $sql="INSERT INTO `cart`(`id_user`, `idpro`, `image`, `ten_sanpham`, `gia`, `soluong`, `tongtien`, `idbill`) 
+    VALUES ('$id_user_string','$idpro','$image','$ten_sanpham','$gia','$soluong','$tongtien','$idbill')";
     return pdo_execute($sql);
 } 
 
@@ -118,10 +124,44 @@ function loadone_bill($id)
     $bill = pdo_query_one($sql);
     return $bill;
 }
+function loadall_cart_count($idbill)
+{
+    $sql = "SELECT * FROM cart WHERE idbill=" . $idbill;
+    $bill = pdo_query($sql);
+    return sizeof($bill);
+}
 function loadall_cart($idbill)
 {
     $sql = "SELECT * FROM cart WHERE idbill=" . $idbill;
     $bill = pdo_query($sql);
     return $bill;
+}
+function loadall_bill($id_user)
+{
+    $id_user_string = implode(', ', $id_user[0]);
+    $sql = "SELECT * FROM bill WHERE id_user=" . $id_user_string;
+    $listbill = pdo_query($sql);
+    return $listbill;
+}
+function get_trangthai($n){
+    switch ($n) {
+        case '0':
+            $tt="Đơn hàng mới";
+            break;
+        case '1':
+            $tt="Đang xử lý";
+            break;
+        case '2':
+            $tt="Đang giao hàng";
+            break;
+        case '3':
+            $tt="Đã giao hàng";
+            break;
+        
+        default:
+        $tt="Đơn hàng mới";
+            break;
+    }
+    return $tt;
 }
 ?>

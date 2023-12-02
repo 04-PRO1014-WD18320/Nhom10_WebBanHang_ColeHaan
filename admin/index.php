@@ -172,6 +172,13 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             case 'trangchu':
                 include "trangchu/home.php";
                 break;
+            case 'listtk':
+
+                $listtaikhoan = loadall_taikhoan();
+                include "taikhoan/list.php";
+        
+        
+                break;
             default:
                 include "home.php";
                 break;

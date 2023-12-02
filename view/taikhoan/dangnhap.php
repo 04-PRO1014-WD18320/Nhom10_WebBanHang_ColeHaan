@@ -61,6 +61,9 @@
                                         <a class="small" href="index.php?act=edit_taikhoan">Sửa thông tin</a>
                                         </div>
                                         <div class="text-center">
+                                        <a class="small" href="index.php?act=edit_taikhoan">Đơn hàng của tôi</a>
+                                        </div>
+                                        <div class="text-center">
                                         <a class="small" href="index.php?act=quenmk">Quên mật khẩu</a>
                                         </div>
                                         <?php
@@ -103,7 +106,7 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="">Quên mật khẩu?</a>
+                                        <a class="small" href="index.php?act=quenmk">Quên mật khẩu?</a>
                                     </div>
                                     <div class="text-center">
                                         <a class="small" href="index.php?act=dangky">Đăng kí tài khoản!</a>

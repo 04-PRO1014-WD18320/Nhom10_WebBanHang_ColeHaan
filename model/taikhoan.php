@@ -1,10 +1,16 @@
 <?php
+function loadall_taikhoan(){
+    $sql= "SELECT * FROM user order by id_user desc";
+
+    $listtaikhoan= pdo_query($sql);
+    return  $listtaikhoan; // trả về danh sách 
+}
 
 function loadall_user(){
     $sql= "SELECT * FROM user order by id_user desc";
 
     $listuser= pdo_query($sql);
-    return  $listuser; // trả về danh sách danh mục
+    return  $listuser; // trả về danh sách 
 }
 
 
