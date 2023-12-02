@@ -1,9 +1,5 @@
-<style>
-    .nutgh{
-        margin-top: 20px;
-    }
-</style>
-<div class="ctsp">
+
+<div class="ctsp" style="border-radius: 5px; margin-top: 50px; height: auto; padding: 20px 0px; ">
     <?php
         extract($onesp);
     ?>  
@@ -17,16 +13,24 @@
             <input type="hidden" name="ten_sanpham" value="'.$ten_sanpham.'">
             <input type="hidden" name="image" value="'.$image.'">
             <input type="hidden" name="gia" value="'.$gia.'">
-            <input type="submit" name="addtocart" value="Thêm vào giỏ hàng">
+            <input type="submit" name="addtocart" value="Thêm vào giỏ hàng" style="border-radius: 5px; margin-top: 20px; font-size: 20px; ">
             </form>';
 
             ?>
             </div>
-            <div class="nutmua">
-            <br><br><input type="button" value="Đặt hàng">
-            </div>
 
-            <div class="motaspct"><?=$mota?></div>
+            <h4 style=" margin-top: 100px;">Mô tả</h4>
+            <div style="    padding: 20px 20px;
+                            border-radius: 5px;
+                            width: 450px;
+                            height: auto;
+                            word-break: keep-all;
+                            border: rgb(0, 0, 0) solid 1px;
+                            float: right;
+                            margin-right: 500px;
+                            ">
+                <?=$mota?></div>
+                
     </div>
     <?php
         extract($onesp);

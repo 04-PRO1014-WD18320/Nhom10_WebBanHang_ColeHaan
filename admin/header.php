@@ -32,7 +32,7 @@
                         <li><a class="dropdown-item" href="#!">Settings</a></li>
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="index.php">Logout</a></li>
+                        <li><a class="dropdown-item" href="../admin/index.php">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -85,6 +85,12 @@
                                     </div>
                                 </nav>
                             </div>
+                            <a class="nav-link collapsed" href="index.php?act=listtk">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Tài khoản
+                                
+                            </a>
+  
                             <div class="sb-sidenav-menu-heading">Addons</div>
                             <a class="nav-link" href="charts.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>

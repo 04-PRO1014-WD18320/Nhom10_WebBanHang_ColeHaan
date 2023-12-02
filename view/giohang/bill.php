@@ -36,12 +36,12 @@
     </div><br>
         <div style="margin-left:200px;">
         <br><h3 style="margin-left:50px; ">Phương thức thanh toán</h3>
-        <div style="width:400px; height:50px; border:1px solid black; text-align:center; border-radius: 10px;">
+        <div style="width:450px; height:50px; border:1px solid black; text-align:center; border-radius: 10px;">
             <div>
                 <table>
                     <tr>
-                        <td style="padding-top:10px; padding-right:20px;padding-left:20px;"><input type="radio" value="1" name="pttt" checked>Trả tiền khi nhận hàng</td>
-                        <td style="padding-top:10px; padding-right:20px;padding-left:20px;"><input type="radio" value="2" name="pttt" >Thanh toán online</td>
+                        <td style="padding-top:10px; padding-right:20px;padding-left:20px;"><input type="radio" value="Thanh toán khi nhận hàng" name="pttt" checked>Thanh toán khi nhận hàng</td>
+                        <td style="padding-top:10px; padding-right:20px;padding-left:20px;"><input type="radio" value="Thanh toán online" name="pttt" >Thanh toán online</td>
                         
                     </tr>
                 </table>
